@@ -1,0 +1,16 @@
+/* Ajustes visuais da página de contato */
+.contact-page{max-width:1180px;margin:0 auto;padding-top:72px;padding-bottom:72px}
+.contact-page>h1{max-width:760px;margin:12px 0 18px;font-size:clamp(42px,6vw,76px);line-height:1.05}
+.contact-page>p:not(.eyebrow){max-width:620px;font-size:16px;line-height:1.8;color:#555;margin-bottom:48px}
+.contact-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:stretch}
+.contact-info{display:flex;flex-direction:column;gap:14px;justify-content:center}
+.contact-info>a:not(.button){display:flex;flex-direction:column;gap:5px;padding:20px 22px;background:#fff;border:1px solid #e3e2dc;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.contact-info>a:not(.button):hover{transform:translateX(5px);border-color:#80EF80;background:#f7fff7}
+.contact-info>a strong{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#222}
+.contact-info>a span{font-size:15px;color:#555;overflow-wrap:anywhere}
+.contact-info .button{align-self:flex-start;margin-top:10px;background:#80EF80;color:#fff;padding:15px 22px}
+.contact-map{display:flex;flex-direction:column;gap:16px;min-width:0}
+.contact-map iframe{width:100%;min-height:390px;border:0;display:block;background:#e9e8e2}
+.contact-map .button{align-self:flex-start;background:#80EF80;color:#fff;padding:15px 22px;margin-top:0}
+.contact-page>.back-link{margin-top:48px}
+@media(max-width:800px){.contact-page{padding-top:48px;padding-bottom:48px}.contact-page>p:not(.eyebrow){margin-bottom:32px}.contact-layout{grid-template-columns:1fr;gap:34px}.contact-map iframe{min-height:280px}.contact-info .button,.contact-map .button{align-self:stretch;text-align:center}.contact-page>.back-link{margin-top:34px}}
