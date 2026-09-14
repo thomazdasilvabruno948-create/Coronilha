@@ -11,7 +11,7 @@ type Negocio = {
   imagem: string;
 };
 
-const imagemReserva = "https://images.unsplash.com/photo-1500595046743-cd271d6497c0?auto=format&fit=crop&w=1200&q=85";
+const imagemReserva = "/fallback-rural.svg";
 
 const negocios: Negocio[] = [
   { id: 1, titulo: "Gado Hereford", categoria: "Gados", localizacao: "Bagé/RS", preco: "R$ 8.500 por animal", peso: "650 kg", descricao: "Exemplo fictício de reprodutor Hereford, com boa conformação, rusticidade e aptidão para produção de carne.", imagem: "https://images.unsplash.com/photo-1560114928-40f299870436?auto=format&fit=crop&w=1200&q=80" },
