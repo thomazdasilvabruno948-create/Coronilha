@@ -1,39 +1,76 @@
 import { useMemo, useState } from "react";
 
-type Imovel = {
+type Negocio = {
   id: number;
   titulo: string;
   categoria: string;
   localizacao: string;
   preco: string;
-  quartos: number;
-  area: string;
+  peso: string;
+  descricao: string;
   imagem: string;
 };
 
-const imoveis: Imovel[] = [
-  { id: 1, titulo: "Casa contemporânea no centro", categoria: "Imóveis", localizacao: "Centro, Bagé/RS", preco: "R$ 480.000", quartos: 3, area: "180 m²", imagem: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" },
-  { id: 2, titulo: "Residência com amplo pátio", categoria: "Imóveis", localizacao: "São Judas, Bagé/RS", preco: "R$ 365.000", quartos: 2, area: "145 m²", imagem: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" },
-  { id: 3, titulo: "Terreno pronto para construir", categoria: "Terrenos", localizacao: "Floresta, Bagé/RS", preco: "R$ 125.000", quartos: 0, area: "360 m²", imagem: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" },
+const negocios: Negocio[] = [
+  {
+    id: 1,
+    titulo: "Gado Hereford",
+    categoria: "Gados",
+    localizacao: "Bagé/RS",
+    preco: "R$ 8.500 por animal",
+    peso: "650 kg",
+    descricao: "Exemplo fictício de reprodutor Hereford, com boa conformação, rusticidade e aptidão para produção de carne.",
+    imagem: "https://images.unsplash.com/photo-1560114928-40f299870436?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: 2,
+    titulo: "Lote de terneiros Braford",
+    categoria: "Gados",
+    localizacao: "Dom Pedrito/RS",
+    preco: "R$ 3.200 por animal",
+    peso: "280 kg",
+    descricao: "Exemplo fictício de lote de terneiros Braford, indicado para recria e terminação em sistema de campo.",
+    imagem: "https://images.unsplash.com/photo-1545468259-4c7d8f7f3f3f?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: 3,
+    titulo: "Campo para criação de gado",
+    categoria: "Campos",
+    localizacao: "Aceguá/RS",
+    preco: "R$ 18.000 por hectare",
+    peso: "120 hectares",
+    descricao: "Exemplo fictício de área rural com campos abertos, espaço para manejo e potencial para criação de gado.",
+    imagem: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: 4,
+    titulo: "Campo nativo com aguadas",
+    categoria: "Campos",
+    localizacao: "Lavras do Sul/RS",
+    preco: "R$ 15.500 por hectare",
+    peso: "85 hectares",
+    descricao: "Exemplo fictício de campo nativo com aguadas e paisagem típica da Campanha Gaúcha, ideal para projetos rurais.",
+    imagem: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+  },
 ];
 
 export default function App() {
   const [categoria, setCategoria] = useState("Todos");
-  const [selecionado, setSelecionado] = useState<Imovel | null>(null);
-  const filtrados = useMemo(() => categoria === "Todos" ? imoveis : imoveis.filter((item) => item.categoria === categoria), [categoria]);
+  const [selecionado, setSelecionado] = useState<Negocio | null>(null);
+  const filtrados = useMemo(() => categoria === "Todos" ? negocios : negocios.filter((item) => item.categoria === categoria), [categoria]);
 
   return (
     <main>
-      <header className="nav"><div className="marca">CORONILHA<span> IMOBILIÁRIA</span></div><nav><a href="#inicio">Início</a><a href="#catalogo">Imóveis</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a></nav></header>
-      <section id="inicio" className="hero hero-centered"><div className="hero-copy"><div className="hero-logo">CORONILHA</div><h1>Coronilha, negócios rurais</h1><p>Imóveis selecionados para quem valoriza localização, qualidade e tranquilidade.</p></div></section>
+      <header className="nav"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><nav><a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a></nav></header>
+      <section id="inicio" className="hero hero-centered"><div className="hero-copy"><div className="hero-logo">CORONILHA</div><h1>Coronilha, negócios rurais</h1><p>Gados e campos selecionados para quem valoriza a vida rural, a qualidade e novas oportunidades.</p></div></section>
       <section className="categories">
         <article className="category-card">
           <img src="https://images.unsplash.com/photo-1560114928-40f299870436?auto=format&fit=crop&w=1200&q=80" alt="Gado em uma propriedade rural" />
           <div className="category-card-body">
             <p className="eyebrow">NEGÓCIOS RURAIS</p>
             <h2>Gados</h2>
-            <p>Encontre oportunidades relacionadas à criação e comercialização de gado, com informações claras para apoiar sua decisão.</p>
-            <button onClick={() => setCategoria("Todos")}>Conhecer oportunidades <span>↗</span></button>
+            <p>Conheça exemplos de animais disponíveis para negociação, com peso, preço demonstrativo e informações essenciais.</p>
+            <button onClick={() => setCategoria("Gados")}>Ver gados <span>↗</span></button>
           </div>
         </article>
         <article className="category-card">
@@ -41,15 +78,15 @@ export default function App() {
           <div className="category-card-body">
             <p className="eyebrow">PROPRIEDADES RURAIS</p>
             <h2>Campos</h2>
-            <p>Explore campos e áreas rurais para diferentes objetivos, como produção, criação, investimento ou novos projetos.</p>
-            <button onClick={() => setCategoria("Todos")}>Explorar campos <span>↗</span></button>
+            <p>Explore exemplos de áreas rurais para criação, produção, investimento ou desenvolvimento de novos projetos.</p>
+            <button onClick={() => setCategoria("Campos")}>Ver campos <span>↗</span></button>
           </div>
         </article>
       </section>
-      <section id="catalogo" className="section"><div className="section-heading"><div><p className="eyebrow">NOSSO CATÁLOGO</p><h2>Encontre o lugar certo.</h2></div><div className="filters">{["Todos", "Imóveis", "Terrenos"].map((item) => <button className={categoria === item ? "active" : ""} key={item} onClick={() => setCategoria(item)}>{item}</button>)}</div></div><div className="grid">{filtrados.map((item) => <article className="property" key={item.id} onClick={() => setSelecionado(item)}><img src={item.imagem} alt={item.titulo} /><div className="property-body"><small>{item.categoria} · {item.localizacao}</small><h3>{item.titulo}</h3><p>{item.area}{item.quartos ? ` · ${item.quartos} quartos` : ""}</p><strong>{item.preco}</strong><button>Ver imóvel ↗</button></div></article>)}</div></section>
-      <section id="sobre" className="about"><p className="eyebrow">SOBRE A CORONILHA</p><h2>Mais que imóveis.<br />Um novo começo.</h2><p>Somos uma imobiliária dedicada a aproximar pessoas de espaços que combinam com seus planos. Esta versão inicial apresenta a interface e o catálogo demonstrativo da Coronilha.</p></section>
-      <footer id="contato"><div className="marca">CORONILHA<span> IMOBILIÁRIA</span></div><p>Vamos encontrar seu próximo endereço?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Imobiliária · Bagé/RS</small></footer>
-      {selecionado && <div className="modal" onClick={() => setSelecionado(null)}><div className="modal-content" onClick={(event) => event.stopPropagation()}><button className="close" onClick={() => setSelecionado(null)}>×</button><img src={selecionado.imagem} alt={selecionado.titulo} /><p className="eyebrow">{selecionado.categoria}</p><h2>{selecionado.titulo}</h2><p>{selecionado.localizacao} · {selecionado.area} · {selecionado.quartos || ""} {selecionado.quartos ? "quartos" : ""}</p><h3>{selecionado.preco}</h3><a className="button" href="mailto:contato@coronilha.com.br">Tenho interesse</a></div></div>}
+      <section id="catalogo" className="section"><div className="section-heading"><div><p className="eyebrow">NOSSO CATÁLOGO</p><h2>Encontre o negócio certo.</h2></div><div className="filters">{["Todos", "Gados", "Campos"].map((item) => <button className={categoria === item ? "active" : ""} key={item} onClick={() => setCategoria(item)}>{item}</button>)}</div></div><div className="grid">{filtrados.map((item) => <article className="property" key={item.id} onClick={() => setSelecionado(item)}><img src={item.imagem} alt={item.titulo} /><div className="property-body"><small>{item.categoria} · {item.localizacao}</small><h3>{item.titulo}</h3><p>{item.peso}</p><p>{item.descricao}</p><strong>{item.preco}</strong><button>Ver detalhes ↗</button></div></article>)}</div></section>
+      <section id="sobre" className="about"><p className="eyebrow">SOBRE A CORONILHA</p><h2>Mais que negócios.<br />Um novo começo.</h2><p>Somos uma empresa dedicada a aproximar pessoas de oportunidades no campo. Os itens apresentados nesta versão são exemplos fictícios para demonstrar a estrutura do catálogo.</p></section>
+      <footer id="contato"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
+      {selecionado && <div className="modal" onClick={() => setSelecionado(null)}><div className="modal-content" onClick={(event) => event.stopPropagation()}><button className="close" onClick={() => setSelecionado(null)}>×</button><img src={selecionado.imagem} alt={selecionado.titulo} /><p className="eyebrow">{selecionado.categoria}</p><h2>{selecionado.titulo}</h2><p>{selecionado.localizacao}</p><p><strong>Peso ou área:</strong> {selecionado.peso}</p><p>{selecionado.descricao}</p><h3>{selecionado.preco}</h3><a className="button" href="mailto:contato@coronilha.com.br">Tenho interesse</a></div></div>}
     </main>
   );
 }
