@@ -22,29 +22,31 @@ const perguntasFrequentes = [
   { pergunta: "Os anúncios do catálogo são reais?", resposta: "Nesta versão demonstrativa, os anúncios são fictícios e servem apenas para apresentar a estrutura da Coronilha." },
   { pergunta: "Como posso demonstrar interesse em um anúncio?", resposta: "Abra a página do anúncio e clique em ‘Tenho interesse’. O botão abrirá uma mensagem de e-mail para iniciar o contato." },
   { pergunta: "A Coronilha trabalha com gados e campos?", resposta: "Sim. A proposta da Coronilha é aproximar pessoas de oportunidades relacionadas a gados e propriedades rurais." },
-  { pergunta: "Posso entrar em contato para tirar dúvidas?", resposta: "Sim. Utilize o botão ‘Entrar em contato’ no rodapé da página para enviar uma mensagem." },
+  { pergunta: "Posso entrar em contato para tirar dúvidas?", resposta: "Sim. Acesse nossa página de contato para encontrar telefone, endereço, redes sociais e WhatsApp." },
 ];
 
 export default function App() {
   const [categoria, setCategoria] = useState("Todos");
   const [pagina, setPagina] = useState<Negocio | null>(null);
   const [sobre, setSobre] = useState(false);
+  const [contato, setContato] = useState(false);
   const [faqAberta, setFaqAberta] = useState<number | null>(null);
   const filtrados = useMemo(() => categoria === "Todos" ? negocios : negocios.filter((item) => item.categoria === categoria), [categoria]);
 
   const voltarInicio = () => {
     setPagina(null);
     setSobre(false);
+    setContato(false);
   };
 
   const cabecalho = (
     <header className="nav">
       <a className="marca" href="#inicio" onClick={voltarInicio}>CORONILHA<span> NEGÓCIOS RURAIS</span></a>
       <nav>
-        <a href="#catalogo" onClick={() => { setPagina(null); setSobre(false); setCategoria("Campos"); }}>Campos</a>
-        <a href="#catalogo" onClick={() => { setPagina(null); setSobre(false); setCategoria("Gados"); }}>Gado</a>
-        <a href="#sobre" onClick={() => { setPagina(null); setSobre(true); }}>Sobre nós</a>
-        <a href="#contato" onClick={() => { setPagina(null); setSobre(false); }}>Entre em contato</a>
+        <a href="#catalogo" onClick={() => { setPagina(null); setSobre(false); setContato(false); setCategoria("Campos"); }}>Campos</a>
+        <a href="#catalogo" onClick={() => { setPagina(null); setSobre(false); setContato(false); setCategoria("Gados"); }}>Gado</a>
+        <a href="#sobre" onClick={() => { setPagina(null); setSobre(true); setContato(false); }}>Sobre nós</a>
+        <a href="#contato-page" onClick={() => { setPagina(null); setSobre(false); setContato(true); }}>Entre em contato</a>
       </nav>
     </header>
   );
@@ -60,7 +62,7 @@ export default function App() {
             <div className="detail-copy"><p className="eyebrow">{pagina.categoria}</p><h1>{pagina.titulo}</h1><p className="detail-location">{pagina.localizacao}</p><p>{pagina.descricao}</p><div className="detail-info"><div><small>Peso ou área</small><strong>{pagina.peso}</strong></div><div><small>Valor demonstrativo</small><strong>{pagina.preco}</strong></div></div><p className="notice">Este anúncio é fictício e serve apenas para demonstrar a apresentação de oportunidades rurais.</p><a className="button" href={`mailto:contato@coronilha.com.br?subject=Interesse%20em%20${encodeURIComponent(pagina.titulo)}`}>Tenho interesse ↗</a></div>
           </div>
         </section>
-        <footer id="contato"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
+        <footer><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><button className="button" onClick={() => { setPagina(null); setContato(true); }}>Entrar em contato</button><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
       </main>
     );
   }
@@ -86,7 +88,35 @@ export default function App() {
           </div>
           <button className="button" onClick={voltarInicio}>Voltar para a home ↗</button>
         </section>
-        <footer id="contato"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
+        <footer><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><button className="button" onClick={() => { setSobre(false); setContato(true); }}>Entrar em contato</button><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
+      </main>
+    );
+  }
+
+  if (contato) {
+    return (
+      <main>
+        {cabecalho}
+        <section id="contato-page" className="section contact-page detail-page">
+          <p className="eyebrow">FALE CONOSCO</p>
+          <h1>Entre em contato.</h1>
+          <p>Estamos prontos para atender você, tirar dúvidas e ajudar a encontrar sua próxima oportunidade rural.</p>
+          <div className="contact-layout">
+            <div className="contact-info">
+              <a href="tel:+5553999999999"><strong>Telefone</strong><span>(53) 99999-9999</span></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer"><strong>Instagram</strong><span>@coronilha.negociosrurais ↗</span></a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer"><strong>Facebook</strong><span>Coronilha Negócios Rurais ↗</span></a>
+              <a href="https://maps.google.com/?q=Bage+RS" target="_blank" rel="noreferrer"><strong>Endereço</strong><span>Bagé, Rio Grande do Sul ↗</span></a>
+              <a className="button" href="https://wa.me/5553999999999" target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a>
+            </div>
+            <div className="contact-map">
+              <iframe title="Mapa de localização da Coronilha em Bagé" src="https://www.google.com/maps?q=Bag%C3%A9%2C%20Rio%20Grande%20do%20Sul&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <a className="button" href="https://www.google.com/maps/dir/?api=1&destination=Bag%C3%A9%2C%20Rio%20Grande%20do%20Sul" target="_blank" rel="noreferrer">Como chegar ↗</a>
+            </div>
+          </div>
+          <button className="back-link" onClick={voltarInicio}>← Voltar para a home</button>
+        </section>
+        <footer><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
       </main>
     );
   }
@@ -98,7 +128,7 @@ export default function App() {
       <section className="categories"><article className="category-card"><img src="https://images.unsplash.com/photo-1500595046743-cd271d6497c0?auto=format&fit=crop&w=1200&q=85" alt="Gado pastando em uma propriedade rural" /><div className="category-card-body"><p className="eyebrow">NEGÓCIOS RURAIS</p><h2>Gados</h2><p>Conheça exemplos de animais disponíveis para negociação, com peso, preço demonstrativo e informações essenciais.</p><button onClick={() => setCategoria("Gados")}>Ver gados <span>↗</span></button></div></article><article className="category-card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Campo aberto e paisagem rural" /><div className="category-card-body"><p className="eyebrow">PROPRIEDADES RURAIS</p><h2>Campos</h2><p>Explore exemplos de áreas rurais para criação, produção, investimento ou desenvolvimento de novos projetos.</p><button onClick={() => setCategoria("Campos")}>Ver campos <span>↗</span></button></div></article></section>
       <section id="catalogo" className="section"><div className="section-heading"><div><p className="eyebrow">NOSSO CATÁLOGO</p><h2>Encontre o negócio certo.</h2></div><div className="filters">{["Todos", "Gados", "Campos"].map((item) => <button className={categoria === item ? "active" : ""} key={item} onClick={() => setCategoria(item)}>{item}</button>)}</div></div><div className="grid">{filtrados.map((item) => <article className="property" key={item.id} onClick={() => setPagina(item)}><img src={item.imagem} alt={item.titulo} /><div className="property-body"><small>{item.categoria} · {item.localizacao}</small><h3>{item.titulo}</h3><p>{item.peso}</p><p>{item.descricao}</p><strong>{item.preco}</strong><button onClick={() => setPagina(item)}>Ver página ↗</button></div></article>)}</div></section>
       <section id="perguntas-frequentes" className="section faq-section"><div className="section-heading"><div><p className="eyebrow">DÚVIDAS</p><h2>Perguntas frequentes.</h2></div><p>Encontre respostas rápidas sobre a Coronilha e nosso catálogo.</p></div><div className="faq-list">{perguntasFrequentes.map((item, index) => <div className={`faq-item ${faqAberta === index ? "open" : ""}`} key={item.pergunta}><button className="faq-question" onClick={() => setFaqAberta(faqAberta === index ? null : index)} aria-expanded={faqAberta === index}>{item.pergunta}<span>{faqAberta === index ? "−" : "+"}</span></button>{faqAberta === index && <p className="faq-answer">{item.resposta}</p>}</div>)}</div></section>
-      <footer id="contato"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
+      <footer><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><button className="button" onClick={() => setContato(true)}>Entrar em contato</button><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
     </main>
   );
 }
