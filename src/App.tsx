@@ -69,7 +69,23 @@ export default function App() {
     return (
       <main>
         {cabecalho}
-        <section id="sobre" className="section about detail-page"><p className="eyebrow">SOBRE A CORONILHA</p><h1>Mais que negócios.<br />Um novo começo.</h1><p>Somos uma empresa dedicada a aproximar pessoas de oportunidades no campo. Os itens apresentados nesta versão são exemplos fictícios para demonstrar a estrutura do catálogo.</p><button className="button" onClick={voltarInicio}>Voltar para a home ↗</button></section>
+        <section id="sobre" className="section about detail-page">
+          <p className="eyebrow">SOBRE A CORONILHA</p>
+          <h1>Mais que negócios.<br />Um novo começo.</h1>
+          <p>Somos uma empresa dedicada a aproximar pessoas de oportunidades no campo. Os itens apresentados nesta versão são exemplos fictícios para demonstrar a estrutura do catálogo.</p>
+          <div className="owner-profile">
+            <div className="owner-photo-placeholder" role="img" aria-label="Espaço reservado para foto de Arthur Macedo">FOTO</div>
+            <h2>Arthur Macedo</h2>
+            <p className="owner-description">Arthur Macedo é um empreendedor apaixonado pelo campo e pela construção de relações de confiança. Com uma visão voltada para o futuro, busca conectar pessoas, propriedades e oportunidades, valorizando a tradição rural e novas formas de fazer negócios.</p>
+            <div className="owner-contacts">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer"><strong>Facebook</strong><span>@coronilha.negociosrurais ↗</span></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer"><strong>Instagram</strong><span>@coronilha.negociosrurais ↗</span></a>
+              <a href="tel:+5553999999999"><strong>Telefone</strong><span>(53) 99999-9999 ↗</span></a>
+              <a href="https://maps.google.com/?q=Bage+RS" target="_blank" rel="noreferrer"><strong>Endereço</strong><span>Bagé, Rio Grande do Sul ↗</span></a>
+            </div>
+          </div>
+          <button className="button" onClick={voltarInicio}>Voltar para a home ↗</button>
+        </section>
         <footer id="contato"><div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div><p>Vamos encontrar sua próxima oportunidade no campo?</p><a className="button" href="mailto:contato@coronilha.com.br">Entrar em contato</a><small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small></footer>
       </main>
     );
