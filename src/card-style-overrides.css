@@ -39,6 +39,11 @@
   color: #f7f1e7;
 }
 
+.category-card h2,
+.property h3 {
+  transition: color 220ms ease, transform 220ms ease;
+}
+
 .category-card .eyebrow,
 .property .eyebrow {
   color: #b18a4a;
@@ -53,6 +58,12 @@
 .property-body button:hover,
 .property:hover .property-body button {
   color: #ffffff;
+}
+
+.category-card:hover h2,
+.property:hover h3 {
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .category-card:hover,
