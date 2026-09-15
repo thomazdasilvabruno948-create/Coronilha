@@ -1,0 +1,10 @@
+{
+  "name": "Coronilha Negócios Rurais",
+  "short_name": "Coronilha",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1f3d2b",
+  "background_color": "#f8f7f4",
+  "description": "Catálogo demonstrativo de oportunidades em gados, campos e negócios rurais."
+}
