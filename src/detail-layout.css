@@ -29,10 +29,57 @@
 .detail-copy .button { align-self: flex-start; margin-top: 22px; padding: 14px 24px; background: #80EF80; color: #000; }
 /* Nas páginas individuais, mantém apenas o botão "Tenho interesse". */
 .detail-page + footer .button { display: none; }
+.detail-map {
+  width: 100%;
+  max-width: 1240px;
+  margin: 30px auto 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e2e0d9;
+  border-radius: 8px;
+}
+.detail-map-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.detail-map-heading h2 {
+  margin: 6px 0 8px;
+  font-size: clamp(24px, 3vw, 38px);
+}
+.detail-map-heading p:not(.eyebrow) {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+.detail-map iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 4px;
+}
+.detail-map .button {
+  flex-shrink: 0;
+  background: #80EF80;
+  color: #000;
+}
+.detail-map-note {
+  margin: 12px 0 0;
+  color: #666;
+  font-size: 12px;
+}
 @media (max-width:900px) {
   .detail-layout { grid-template-columns: 1fr; gap: 26px; padding: 22px; }
   .detail-image { height: 330px; max-height: none; }
   .detail-thumbnail img { height: 82px; }
+}
+@media (max-width:650px) {
+  .detail-map { padding: 16px; }
+  .detail-map-heading { align-items: stretch; flex-direction: column; }
+  .detail-map iframe { height: 250px; }
 }
 @media (max-width:560px) {
   .detail-page { padding: 30px 5%; }
