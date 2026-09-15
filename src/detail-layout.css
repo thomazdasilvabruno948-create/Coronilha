@@ -43,6 +43,15 @@
 .terrain-label { position: absolute; z-index: 3; left: 18px; bottom: 18px; padding: 8px 12px; background: rgba(0,0,0,.68); color: #fff; font-size: 12px; border-radius: 3px; }
 .detail-map .button { flex-shrink: 0; background: #80EF80; color: #000; }
 .detail-map-note { margin: 12px 0 0; color: #666; font-size: 12px; }
+
+/* O botão de rota fica depois dos dois painéis, no final da seção. */
+.detail-map { display: flex; flex-direction: column; }
+.detail-map-heading { display: contents; }
+.detail-map-heading > div { order: 1; margin-bottom: 18px; }
+.detail-map-grid { order: 2; }
+.detail-map-heading > .button { order: 3; align-self: flex-start; margin-top: 18px; }
+.detail-map-note { order: 4; }
+
 @media (max-width:900px) {
   .detail-map-grid { grid-template-columns: 1fr; }
   .detail-layout { grid-template-columns: 1fr; gap: 26px; padding: 22px; }
