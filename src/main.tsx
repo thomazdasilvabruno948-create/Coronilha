@@ -8,6 +8,7 @@ import "./fields-layout.css";
 import "./detail-layout.css";
 import "./bege-background.css";
 import "./theme-overrides.css";
+import "./card-style-overrides.css";
 
 updateSeo(window.location.pathname);
 
