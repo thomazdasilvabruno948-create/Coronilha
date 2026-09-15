@@ -27,6 +27,8 @@
 .detail-info strong { font-size: 18px; line-height: 1.35; overflow-wrap: anywhere; }
 .notice { margin: 0; padding: 13px 15px; border-left: 3px solid #d8d5cc; background: #f1f0ed; color: #888; font-size: 11px; line-height: 1.6; }
 .detail-copy .button { align-self: flex-start; margin-top: 22px; padding: 14px 24px; background: #80EF80; color: #000; }
+/* Nas páginas individuais, mantém apenas o botão "Tenho interesse". */
+.detail-page + footer .button { display: none; }
 @media (max-width:900px) {
   .detail-layout { grid-template-columns: 1fr; gap: 26px; padding: 22px; }
   .detail-image { height: 330px; max-height: none; }
