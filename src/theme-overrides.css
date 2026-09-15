@@ -5,7 +5,7 @@ html,body,#root{background:var(--cor-bege);color:var(--cor-verde)}
 .hero h1,.hero-logo,.category-card h2,.section h2,.about h2,.detail-copy h1,.owner-profile h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700}
 .eyebrow{color:var(--cor-dourado)}
 .hero-copy>p:not(.eyebrow),.category-card-body>p:not(.eyebrow),.property p,footer p,footer small{color:var(--cor-verde)}
-.nav nav a{color:#ffffff}
+.nav,.nav .marca,.nav .marca span,.nav nav a,.nav nav a:visited{color:#ffffff}
 .nav nav a:hover{color:var(--cor-bege)}
 .button,.filters .active{background:var(--cor-dourado);color:#fff;border-color:var(--cor-dourado)}
 .category-card{background:var(--cor-verde);color:var(--cor-bege);border-radius:0 0 44px 0;position:relative;overflow:hidden}
