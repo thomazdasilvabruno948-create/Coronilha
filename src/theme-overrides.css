@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap');
+:root{--cor-bege:#eee8dc;--cor-verde:#203b24;--cor-dourado:#b18a4a;background:var(--cor-bege);color:var(--cor-verde)}
+html,body,#root{background:var(--cor-bege);color:var(--cor-verde)}
+.hero{background:var(--cor-verde)}
+.hero h1,.hero-logo,.category-card h2,.section h2,.about h2,.detail-copy h1,.owner-profile h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700}
+.eyebrow{color:var(--cor-dourado)}
+.hero-copy>p:not(.eyebrow),.category-card-body>p:not(.eyebrow),.property p,footer p,footer small{color:var(--cor-verde)}
+.button,.filters .active{background:var(--cor-dourado);color:#fff;border-color:var(--cor-dourado)}
+.category-card{background:var(--cor-verde);color:#f7f1e7;border-radius:0 0 44px 0;position:relative;overflow:hidden}
+.category-card::after{content:'';display:block;height:24px;background:var(--cor-bege);border-radius:50% 50% 0 0/100% 100% 0 0;margin-top:-12px;position:relative;z-index:2}
+.category-card-body{background:var(--cor-verde)}.category-card h2{color:#f7f1e7}.category-card button{color:var(--cor-dourado)}
+.section{background:var(--cor-bege)}.filters button{background:#e2d8c6;color:var(--cor-verde);border-color:#cbbda7}
+.property{background:#f8f3ea;border-radius:0 0 28px 28px;border-bottom:7px solid var(--cor-dourado)}.property h3{color:var(--cor-verde)}.property-body button{color:var(--cor-dourado)}
+.about{background:var(--cor-verde);color:#f7f1e7}.about:hover{background:#315637}.about h2,.about p:last-child{color:#f7f1e7}
+.faq-section{background:#e2d8c6}.faq-question{color:var(--cor-verde)}.faq-question span{color:var(--cor-dourado)}
+footer{background:var(--cor-bege)}
+@media(max-width:800px){.category-card{border-radius:0 0 28px 0}}
