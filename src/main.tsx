@@ -6,6 +6,7 @@ import "./styles.css";
 import "./contact-layout.css";
 import "./fields-layout.css";
 import "./detail-layout.css";
+import "./coronilha-refactor.css";
 
 updateSeo(window.location.pathname);
 
