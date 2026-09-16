@@ -1,18 +1,16 @@
-type HeaderProps = {
-  navegar: (path: string) => void;
-};
+import { Link } from "@tanstack/react-router";
 
-export default function Header({ navegar }: HeaderProps) {
+export default function Header() {
   return (
     <header className="nav">
-      <a className="marca" href="/" onClick={(e) => { e.preventDefault(); navegar("/"); }}>
+      <Link className="marca" to="/">
         CORONILHA<span> NEGÓCIOS RURAIS</span>
-      </a>
+      </Link>
       <nav>
-        <a href="/campos" onClick={(e) => { e.preventDefault(); navegar("/campos"); }}>Campos</a>
-        <a href="/gados" onClick={(e) => { e.preventDefault(); navegar("/gados"); }}>Gado</a>
-        <a href="/sobre" onClick={(e) => { e.preventDefault(); navegar("/sobre"); }}>Sobre nós</a>
-        <a href="/contato" onClick={(e) => { e.preventDefault(); navegar("/contato"); }}>Entre em contato</a>
+        <Link to="/campos">Campos</Link>
+        <Link to="/gados">Gado</Link>
+        <Link to="/sobre">Sobre nós</Link>
+        <Link to="/contato">Entre em contato</Link>
       </nav>
     </header>
   );
