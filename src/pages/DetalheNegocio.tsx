@@ -1,15 +1,17 @@
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import ImagemComReserva from "../components/ImagemComReserva";
 import type { Negocio } from "../data/negocios";
 
-type Props = { item: Negocio; navegar: (path: string) => void };
+type Props = { item: Negocio };
 
-export default function DetalheNegocio({ item, navegar }: Props) {
+export default function DetalheNegocio({ item }: Props) {
   const [fotoSelecionada, setFotoSelecionada] = useState(0);
+  const base = item.categoria === "Gados" ? "/gados" : "/campos";
 
   return (
     <section className="section detail-page">
-      <button className="back-link" onClick={() => navegar(`/${item.categoria.toLowerCase()}`)}>← Voltar para {item.categoria.toLowerCase()}</button>
+      <Link className="back-link" to={base}>← Voltar para {item.categoria.toLowerCase()}</Link>
       <div className="detail-layout">
         <div className="detail-gallery">
           <ImagemComReserva className="detail-image" src={item.imagens[fotoSelecionada] || item.imagem} alt={`${item.titulo} - foto ${fotoSelecionada + 1}`} />
