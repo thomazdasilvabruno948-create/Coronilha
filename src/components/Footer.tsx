@@ -1,13 +1,11 @@
-type FooterProps = {
-  navegar: (path: string) => void;
-};
+import { Link } from "@tanstack/react-router";
 
-export default function Footer({ navegar }: FooterProps) {
+export default function Footer() {
   return (
     <footer>
       <div className="marca">CORONILHA<span> NEGÓCIOS RURAIS</span></div>
       <p>Vamos encontrar sua próxima oportunidade no campo?</p>
-      <button className="button" onClick={() => navegar("/contato")}>Entrar em contato ↗</button>
+      <Link className="button" to="/contato">Entrar em contato ↗</Link>
       <small>© 2026 Coronilha Negócios Rurais · Bagé/RS</small>
     </footer>
   );
