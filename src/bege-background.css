@@ -1,0 +1,10 @@
+/* Fundo bege claro para o site Coronilha */
+:root {
+  background: #f3eadf;
+}
+
+html,
+body,
+#root {
+  background-color: #f3eadf;
+}
