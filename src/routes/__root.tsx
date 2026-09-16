@@ -7,6 +7,9 @@ import contactStylesUrl from "../contact-layout.css?url";
 import fieldsStylesUrl from "../fields-layout.css?url";
 import detailStylesUrl from "../detail-layout.css?url";
 import refactorStylesUrl from "../coronilha-refactor.css?url";
+import begeBackgroundUrl from "../bege-background.css?url";
+import cardOverridesUrl from "../card-style-overrides.css?url";
+import themeOverridesUrl from "../theme-overrides.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -21,6 +24,9 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: fieldsStylesUrl },
       { rel: "stylesheet", href: detailStylesUrl },
       { rel: "stylesheet", href: refactorStylesUrl },
+      { rel: "stylesheet", href: begeBackgroundUrl },
+      { rel: "stylesheet", href: cardOverridesUrl },
+      { rel: "stylesheet", href: themeOverridesUrl },
     ],
   }),
   shellComponent: RootShell,
