@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { negocios } from "./data/negocios";
-import type { CategoriaNegocio } from "./data/negocios";
 import Categoria from "./pages/Categoria";
 import Contato from "./pages/Contato";
 import DetalheNegocio from "./pages/DetalheNegocio";
@@ -55,12 +54,13 @@ export default function App() {
     document.title = titulo;
   }, [item, rota]);
 
-  let pagina: React.ReactNode;
+  let pagina: ReactNode;
 
   if (item) {
     pagina = <DetalheNegocio item={item} navegar={navegar} />;
   } else if (rota === "gados" || rota === "campos") {
-    pagina = <Categoria categoria={rota === "gados" ? "Gados" : "Campos" as CategoriaNegocio} navegar={navegar} />;
+    const categoria = rota === "gados" ? "Gados" : "Campos";
+    pagina = <Categoria categoria={categoria} navegar={navegar} />;
   } else if (rota === "sobre") {
     pagina = <Sobre />;
   } else if (rota === "contato") {
