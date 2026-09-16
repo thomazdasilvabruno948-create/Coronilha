@@ -1,11 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import ImagemComReserva from "../components/ImagemComReserva";
 import type { CategoriaNegocio } from "../data/negocios";
 import { negocios } from "../data/negocios";
 
-type Props = { categoria: CategoriaNegocio; navegar: (path: string) => void };
+type Props = { categoria: CategoriaNegocio };
 
-export default function Categoria({ categoria, navegar }: Props) {
+export default function Categoria({ categoria }: Props) {
   const itens = negocios.filter((n) => n.categoria === categoria);
+  const base = categoria === "Gados" ? "/gados" : "/campos";
 
   return (
     <section className="section category-page">
@@ -14,12 +16,12 @@ export default function Categoria({ categoria, navegar }: Props) {
       <p className="category-intro">Explore as oportunidades demonstrativas de {categoria.toLowerCase()} da Coronilha.</p>
       <div className="catalog-grid">
         {itens.map((n) => (
-          <article className="listing-card" key={n.id} onClick={() => navegar(`/${n.categoria.toLowerCase()}/${n.slug}`)}>
+          <Link className="listing-card" key={n.id} to={`${base}/${n.slug}`}>
             <ImagemComReserva src={n.imagem} alt={n.titulo} />
             <div className="listing-card-body">
               <p className="eyebrow">{n.localizacao}</p><h2>{n.titulo}</h2><p>{n.descricao}</p><strong>{n.preco}</strong><span>Ver oportunidade ↗</span>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>
