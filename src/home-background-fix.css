@@ -1,0 +1,13 @@
+/* Home hero: keep the photographic cover full-bleed across the viewport. */
+.hero{
+  width:100%;
+  max-width:none;
+  margin-left:0;
+  margin-right:0;
+}
+.hero::before{
+  inset:-24px;
+  background-size:cover;
+  background-position:center center;
+  transform:scale(1.06);
+}
