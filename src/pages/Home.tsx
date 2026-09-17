@@ -4,6 +4,7 @@ import ImagemComReserva from "../components/ImagemComReserva";
 import { negocios } from "../data/negocios";
 import { perguntasFrequentes } from "../data/perguntasFrequentes";
 import "../home-identity.css";
+import "../home-background-fix.css";
 
 export default function Home() {
   const [faqAberta, setFaqAberta] = useState<number | null>(null);
