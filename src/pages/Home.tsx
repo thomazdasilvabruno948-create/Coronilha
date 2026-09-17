@@ -9,17 +9,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero section">
-        <div>
-          <p className="eyebrow">CAMPANHA GAÚCHA · BAGÉ/RS</p>
-          <h1>Negócios rurais com mais clareza.</h1>
-          <p>Uma experiência para descobrir gados, campos e oportunidades no universo rural.</p>
-          <div className="hero-actions">
-            <Link className="button" to="/campos">Explorar campos ↗</Link>
-            <Link className="button button-secondary" to="/gados">Ver gados ↗</Link>
-          </div>
-        </div>
-      </section>
+      <section className="hero section" />
 
       <section className="section categories">
         <Link className="category-card" to="/gados">
