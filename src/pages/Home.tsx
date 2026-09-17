@@ -9,7 +9,16 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero section" />
+      <section className="hero section">
+        <div className="hero-centered">
+          <div className="hero-copy">
+            <div className="hero-logo-placeholder" aria-label="Espaço reservado para a logo">
+              LOGO
+            </div>
+            <div className="hero-logo">CORONILHA</div>
+          </div>
+        </div>
+      </section>
 
       <section className="section categories">
         <Link className="category-card" to="/gados">
