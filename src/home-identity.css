@@ -104,16 +104,20 @@
 
 .home-page .category-card .eyebrow{
   color:var(--brand-gold-light);
-  font-size:10px;
-  letter-spacing:2.5px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2.8px;
+  margin:0;
 }
 
 .home-page .category-card h2{
   color:var(--brand-cream-light);
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(42px,5vw,62px);
-  line-height:.95;
-  margin:8px 0 14px;
+  font-size:clamp(48px,5.5vw,68px);
+  font-weight:700;
+  letter-spacing:1px;
+  line-height:.9;
+  margin:8px 0 18px;
 }
 
 .home-page .category-card .button{
@@ -240,4 +244,5 @@
   .home-page .faq-section{width:90%;padding:70px 0}
   .home-page .category-card img{height:240px}
   .home-page .category-card-body{padding:25px}
+  .home-page .category-card h2{font-size:clamp(44px,13vw,58px)}
 }
