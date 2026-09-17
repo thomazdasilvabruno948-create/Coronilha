@@ -3,12 +3,13 @@ import { useState } from "react";
 import ImagemComReserva from "../components/ImagemComReserva";
 import { negocios } from "../data/negocios";
 import { perguntasFrequentes } from "../data/perguntasFrequentes";
+import "../home-identity.css";
 
 export default function Home() {
   const [faqAberta, setFaqAberta] = useState<number | null>(null);
 
   return (
-    <>
+    <div className="home-page">
       <section className="hero section">
         <div className="hero-centered">
           <div className="hero-copy">
@@ -60,6 +61,6 @@ export default function Home() {
           </div>
         ))}
       </section>
-    </>
+    </div>
   );
 }
