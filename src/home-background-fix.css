@@ -1,11 +1,12 @@
-/* Home hero: keep the photographic cover full-bleed across the viewport. */
-.hero{
-  width:100%;
+/* Home hero: force the photographic cover to span the entire viewport. */
+.home-page .hero{
+  width:100vw;
   max-width:none;
-  margin-left:0;
-  margin-right:0;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
 }
-.hero::before{
+
+.home-page .hero::before{
   inset:-24px;
   background-size:cover;
   background-position:center center;
