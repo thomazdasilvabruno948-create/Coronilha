@@ -10,6 +10,7 @@ import refactorStylesUrl from "../coronilha-refactor.css?url";
 import begeBackgroundUrl from "../bege-background.css?url";
 import cardOverridesUrl from "../card-style-overrides.css?url";
 import themeOverridesUrl from "../theme-overrides.css?url";
+import homeBackgroundFixUrl from "../home-background-fix.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -29,6 +30,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: begeBackgroundUrl },
       { rel: "stylesheet", href: cardOverridesUrl },
       { rel: "stylesheet", href: themeOverridesUrl },
+      { rel: "stylesheet", href: homeBackgroundFixUrl },
     ],
   }),
   shellComponent: RootShell,
