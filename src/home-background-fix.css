@@ -1,4 +1,4 @@
-/* Home: keep the original hero and only change the page's light background areas. */
+/* Home: restore the original hero background treatment. */
 .home-page{
   width:100%;
   overflow-x:clip;
@@ -11,16 +11,17 @@
   margin:0;
   box-sizing:border-box;
   background:var(--brand-green);
-  background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85');
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
 }
 
 .home-page .hero::before{
   display:block;
-  opacity:.34;
-  filter:blur(3px);
+  inset:-18px;
+  background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85');
+  background-size:cover;
+  background-position:center;
+  filter:blur(6px);
+  transform:scale(1.04);
+  opacity:.7;
 }
 
 .home-page .hero::after{
