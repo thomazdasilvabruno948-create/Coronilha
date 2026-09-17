@@ -3,6 +3,8 @@ import { useState } from "react";
 import ImagemComReserva from "../components/ImagemComReserva";
 import { negocios } from "../data/negocios";
 import { perguntasFrequentes } from "../data/perguntasFrequentes";
+import "../home-background-fix.css";
+import "../home-identity.css";
 
 export default function Home() {
   const [faqAberta, setFaqAberta] = useState<number | null>(null);
