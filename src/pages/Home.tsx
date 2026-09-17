@@ -27,7 +27,7 @@ export default function Home() {
           <ImagemComReserva src="https://images.unsplash.com/photo-1500595046743-cd271d6497c0?auto=format&fit=crop&w=1200&q=85" alt="Gado em propriedade rural" />
           <div className="category-card-body">
             <p className="eyebrow">NEGÓCIOS RURAIS</p>
-            <h2>Gados em geral</h2>
+            <h2>GADOS EM GERAL</h2>
             <p>Animais selecionados para diferentes necessidades de produção, criação e comercialização, conectando compradores a oportunidades no campo.</p>
             <span className="button">Ver gados ↗</span>
           </div>
@@ -36,7 +36,7 @@ export default function Home() {
           <ImagemComReserva src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85" alt="Campo aberto" />
           <div className="category-card-body">
             <p className="eyebrow">PROPRIEDADES RURAIS</p>
-            <h2>Campos</h2>
+            <h2>CAMPOS</h2>
             <p>Propriedades rurais para criação, produção e novos projetos, reunindo áreas com diferentes características e possibilidades de uso.</p>
             <span className="button">Ver campos ↗</span>
           </div>
