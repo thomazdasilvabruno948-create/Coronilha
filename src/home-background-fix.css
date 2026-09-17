@@ -1,14 +1,21 @@
-/* Home hero: force the photographic cover to span the entire viewport. */
+/* Home hero: render the photographic cover directly on the full-width section. */
+.home-page{
+  width:100%;
+  overflow-x:clip;
+}
+
 .home-page .hero{
   width:100vw;
   max-width:none;
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
+  background-color:var(--brand-green);
+  background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
 }
 
 .home-page .hero::before{
-  inset:-24px;
-  background-size:cover;
-  background-position:center center;
-  transform:scale(1.06);
+  display:none;
 }
