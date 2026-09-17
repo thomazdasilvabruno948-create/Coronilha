@@ -31,8 +31,6 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: begeBackgroundUrl },
       { rel: "stylesheet", href: cardOverridesUrl },
       { rel: "stylesheet", href: themeOverridesUrl },
-      { rel: "stylesheet", href: homeBackgroundFixUrl },
-      { rel: "stylesheet", href: homeIdentityUrl },
     ],
   }),
   shellComponent: RootShell,
