@@ -1,14 +1,14 @@
-/* Home hero: render the photographic cover directly on the full-width section. */
+/* Home hero: keep the background on the actual page width, without viewport-width hacks. */
 .home-page{
   width:100%;
   overflow-x:clip;
 }
 
 .home-page .hero{
-  width:100vw;
+  width:100%;
   max-width:none;
-  margin-left:calc(50% - 50vw);
-  margin-right:calc(50% - 50vw);
+  margin:0;
+  box-sizing:border-box;
   background-color:var(--brand-green);
   background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85');
   background-size:cover;
@@ -18,4 +18,8 @@
 
 .home-page .hero::before{
   display:none;
+}
+
+.home-page .hero::after{
+  inset:0;
 }
