@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.home-page{
+  --brand-green:#203b24;
+  --brand-green-deep:#172d1b;
+  --brand-cream:#e8e1d3;
+  --brand-cream-light:#f4efe6;
+  --brand-gold:#b18a4a;
+  --brand-gold-light:#c9a86a;
+  background:var(--brand-cream-light);
+  color:var(--brand-green);
+  font-family:'Montserrat',sans-serif;
+}
+
+.home-page .hero{
+  min-height:calc(100vh - 82px);
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--brand-green);
+}
+
+.home-page .hero::before{
+  opacity:.34;
+  filter:blur(3px);
+}
+
+.home-page .hero::after{
+  background:linear-gradient(180deg,rgba(23,45,27,.58),rgba(32,59,36,.28) 58%,rgba(232,225,211,.92) 100%);
+}
+
+.home-page .hero-centered{
+  width:100%;
+  min-height:calc(100vh - 82px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.home-page .hero-copy{
+  width:min(100%,1100px);
+  max-width:none;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.home-page .hero-logo-placeholder{
+  width:168px;
+  height:168px;
+  margin:0 auto 30px;
+  border:1px solid rgba(201,168,106,.9);
+  background:rgba(23,45,27,.42);
+  color:var(--brand-gold-light);
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:3px;
+  box-shadow:0 0 0 9px rgba(201,168,106,.08),0 18px 50px rgba(0,0,0,.18);
+}
+
+.home-page .hero-logo{
+  color:var(--brand-cream-light);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(68px,11vw,150px);
+  font-weight:600;
+  letter-spacing:9px;
+  line-height:.82;
+  text-shadow:0 5px 24px rgba(0,0,0,.2);
+}
+
+.home-page .categories{
+  width:min(1120px,88%);
+  margin:0 auto;
+  padding:100px 0 40px;
+  gap:28px;
+  background:transparent;
+}
+
+.home-page .category-card{
+  background:var(--brand-green);
+  border:1px solid rgba(177,138,74,.35);
+  box-shadow:0 12px 35px rgba(32,59,36,.08);
+}
+
+.home-page .category-card img{
+  height:310px;
+  filter:saturate(.78);
+}
+
+.home-page .category-card-body{
+  padding:30px 32px 34px;
+}
+
+.home-page .category-card .eyebrow,
+.home-page .category-card-body>p:not(.eyebrow),
+.home-page .category-card button,
+.home-page .category-card .button{
+  color:var(--brand-cream);
+}
+
+.home-page .category-card .eyebrow{
+  color:var(--brand-gold-light);
+  font-size:10px;
+  letter-spacing:2.5px;
+}
+
+.home-page .category-card h2{
+  color:var(--brand-cream-light);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,5vw,62px);
+  line-height:.95;
+  margin:8px 0 14px;
+}
+
+.home-page .category-card .button{
+  background:transparent;
+  border-top:1px solid rgba(201,168,106,.5);
+  padding:16px 0 0;
+  margin-top:auto;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.home-page .section:not(.categories):not(.faq-section){
+  width:min(1120px,88%);
+  margin:0 auto;
+  padding:90px 0;
+}
+
+.home-page .section>.eyebrow,
+.home-page .faq-section>.eyebrow{
+  color:var(--brand-gold);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+.home-page .section h2,
+.home-page .faq-section h2{
+  color:var(--brand-green);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(46px,6vw,76px);
+  font-weight:600;
+  line-height:.95;
+  margin:10px 0 34px;
+}
+
+.home-page .catalog-grid{
+  gap:22px;
+}
+
+.home-page .listing-card{
+  background:var(--brand-cream);
+  border:1px solid rgba(32,59,36,.12);
+  border-radius:0;
+}
+
+.home-page .listing-card>img{
+  height:270px;
+  filter:saturate(.78);
+}
+
+.home-page .listing-card-body{
+  padding:25px;
+}
+
+.home-page .listing-card-body .eyebrow{
+  color:var(--brand-gold);
+  font-size:9px;
+  letter-spacing:1.7px;
+}
+
+.home-page .listing-card-body h3{
+  color:var(--brand-green);
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:600;
+}
+
+.home-page .listing-card-body strong{
+  color:var(--brand-green);
+  font-size:16px;
+}
+
+.home-page .listing-card-body span{
+  color:var(--brand-gold);
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.home-page .faq-section{
+  width:min(1120px,88%);
+  margin:0 auto;
+  padding:90px 0 120px;
+  background:transparent;
+}
+
+.home-page .faq-section h2{
+  margin-bottom:42px;
+}
+
+.home-page .faq-item{
+  border-color:rgba(32,59,36,.18);
+}
+
+.home-page .faq-item button{
+  padding:24px 0;
+  color:var(--brand-green);
+  font-family:'Montserrat',sans-serif;
+  font-size:14px;
+  font-weight:600;
+}
+
+.home-page .faq-item button>span:last-child{
+  color:var(--brand-gold);
+  font-size:24px;
+}
+
+.home-page .faq-item p{
+  color:#4f5a4a;
+  font-size:13px;
+  line-height:1.8;
+  max-width:760px;
+  padding-bottom:24px;
+}
+
+@media(max-width:800px){
+  .home-page .hero,
+  .home-page .hero-centered{min-height:calc(100svh - 72px)}
+  .home-page .hero-logo-placeholder{width:130px;height:130px;margin-bottom:25px}
+  .home-page .hero-logo{font-size:clamp(54px,15vw,90px);letter-spacing:4px}
+  .home-page .categories{width:90%;padding-top:70px}
+  .home-page .section:not(.categories):not(.faq-section),
+  .home-page .faq-section{width:90%;padding:70px 0}
+  .home-page .category-card img{height:240px}
+  .home-page .category-card-body{padding:25px}
+}
