@@ -11,6 +11,7 @@ import begeBackgroundUrl from "../bege-background.css?url";
 import cardOverridesUrl from "../card-style-overrides.css?url";
 import themeOverridesUrl from "../theme-overrides.css?url";
 import homeBackgroundFixUrl from "../home-background-fix.css?url";
+import homeIdentityUrl from "../home-identity.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -31,6 +32,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: cardOverridesUrl },
       { rel: "stylesheet", href: themeOverridesUrl },
       { rel: "stylesheet", href: homeBackgroundFixUrl },
+      { rel: "stylesheet", href: homeIdentityUrl },
     ],
   }),
   shellComponent: RootShell,
