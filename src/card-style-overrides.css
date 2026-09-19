@@ -22,13 +22,20 @@
 .property-body::before {
   content: "";
   position: absolute;
-  z-index: -1;
-  top: -34px;
-  left: -6%;
-  width: 112%;
-  height: 62px;
+  z-index: 0;
+  top: -58px;
+  left: -30%;
+  width: 160%;
+  height: 92px;
   background: #203b24;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events: none;
+}
+
+.category-card-body > *,
+.property-body > * {
+  position: relative;
+  z-index: 1;
 }
 
 .category-card h2,
@@ -80,7 +87,7 @@
 
   .category-card-body::before,
   .property-body::before {
-    top: -28px;
-    height: 52px;
+    top: -48px;
+    height: 78px;
   }
 }
