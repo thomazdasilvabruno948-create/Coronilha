@@ -218,12 +218,24 @@
   min-height: 0;
 }
 
-/* A faixa bege fica presa ao mesmo ponto no rodapé dos dois cards. */
+/* Divisão dos cards: sem a faixa bege sobre o verde e com o dourado no encontro das áreas. */
 .home-page .category-card::after {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 310px;
+  bottom: auto;
   margin: 0;
-  height: 24px;
+  height: 2px;
+  background: var(--brand-gold, #b18a4a);
+  border-radius: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .home-page .category-card::after {
+    top: 240px;
+  }
 }
